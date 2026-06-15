@@ -1,151 +1,162 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postmortem - Bajo contraste en mensaje de bienvenida</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-
-        h1 {
-            color: #222;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        h2 {
-            margin-top: 30px;
-            color: #444;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
-            margin: 8px 0;
-        }
-
-        .done {
-            color: #198754;
-        }
-
-        .pending {
-            color: #6c757d;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postmortem - Mejora de accesibilidad</title>
 </head>
 <body>
 
-    <h1>Postmortem - Bajo contraste en mensaje de bienvenida</h1>
+  <h1>Postmortem – Mejora de accesibilidad mediante corrección de contraste visual</h1>
 
-    <h2>Información general</h2>
-    <ul>
-        <li class="done">✅ Título del incidente: Bajo contraste visual en el mensaje de bienvenida</li>
-        <li class="done">✅ Fecha de detección: Durante revisión visual de la página</li>
-        <li class="done">✅ Fecha de resolución: Mismo ciclo de desarrollo</li>
-        <li class="done">✅ Responsable: Equipo de desarrollo frontend</li>
-        <li class="done">✅ Componentes involucrados: index.html / estilos CSS</li>
-    </ul>
+  <h2>Contexto</h2>
+  <p>
+    Durante el desarrollo de una página HTML de bienvenida para la Diplomatura de UX/UI,
+    se implementó una interfaz simple compuesta por una imagen y un mensaje principal
+    destinado a dar la bienvenida a los usuarios.
+  </p>
 
-    <h2>Resumen ejecutivo</h2>
-    <ul>
-        <li class="done">✅ Se detectó que el mensaje "Bienvenidos a la diplomatura de UX/UI" utilizaba texto amarillo sobre fondo blanco.</li>
-        <li class="done">✅ La combinación dificultaba la lectura del contenido.</li>
-        <li class="done">✅ Se resolvió modificando el color del texto a negro para aumentar el contraste y mejorar la accesibilidad.</li>
-    </ul>
+  <p>
+    La página fue publicada utilizando GitHub Pages y posteriormente sometida a una
+    revisión visual con el objetivo de verificar su correcta visualización y legibilidad.
+  </p>
 
-    <h2>Impacto</h2>
-    <ul>
-        <li class="done">✅ Afectaba la legibilidad del contenido principal de la página.</li>
-        <li class="done">✅ Podía generar una mala experiencia de usuario.</li>
-        <li class="done">✅ Presentaba un problema de accesibilidad por bajo contraste.</li>
-        <li class="pending">⬜ No afectó funcionalidades ni lógica de negocio.</li>
-    </ul>
+  <h2>Problema identificado</h2>
+  <p>
+    Durante la revisión se detectó que el mensaje principal
+    <strong>"Bienvenidos a la diplomatura de UX/UI"</strong>
+    se mostraba en color amarillo sobre un fondo blanco.
+  </p>
 
-    <h2>Línea de tiempo</h2>
-    <ul>
-        <li class="done">✅ Se creó la página con texto amarillo sobre fondo blanco.</li>
-        <li class="done">✅ Durante la revisión se identificó el problema de visibilidad.</li>
-        <li class="done">✅ Se registró un issue para documentar la mejora.</li>
-        <li class="done">✅ Se implementó el cambio de color.</li>
-        <li class="done">✅ Se verificó la correcta visualización del texto.</li>
-        <li class="done">✅ Se cerró el issue.</li>
-    </ul>
+  <p>
+    Si bien la implementación era funcional desde el punto de vista técnico, la combinación
+    de colores generaba un contraste insuficiente entre el texto y el fondo, dificultando
+    la lectura del contenido.
+  </p>
 
-    <h2>Detección</h2>
-    <ul>
-        <li class="done">✅ Detectado mediante revisión manual de la interfaz.</li>
-        <li class="done">✅ No fue necesario monitoreo automatizado.</li>
-        <li class="done">✅ El problema era visible a simple vista.</li>
-    </ul>
+  <h2>Impacto</h2>
+  <ul>
+    <li>Mayor esfuerzo cognitivo para interpretar el contenido.</li>
+    <li>Dificultad de lectura en determinados dispositivos o condiciones de iluminación.</li>
+    <li>Problemas de accesibilidad para usuarios con limitaciones visuales.</li>
+    <li>Percepción negativa de la calidad de la interfaz.</li>
+  </ul>
 
-    <h2>Causa raíz</h2>
-    <ul>
-        <li class="done">✅ Selección de una combinación de colores con contraste insuficiente.</li>
-        <li class="done">✅ No se validó previamente la legibilidad del texto sobre el fondo.</li>
-        <li class="done">✅ No se consideraron criterios básicos de accesibilidad durante la implementación inicial.</li>
-    </ul>
+  <h2>Análisis de causa raíz</h2>
+  <p>
+    La causa principal fue la selección inicial de una combinación de colores que no ofrecía
+    suficiente diferencia de luminancia entre el texto y el fondo.
+  </p>
 
-    <h2>Acciones tomadas</h2>
-    <ul>
-        <li class="done">✅ Se modificó el color del texto de amarillo a negro.</li>
-        <li class="done">✅ Se mantuvo el resto del diseño sin cambios.</li>
-        <li class="done">✅ Se verificó la mejora visual después de la corrección.</li>
-    </ul>
+  <p>
+    Durante la implementación se priorizó el aspecto visual del diseño, pero no se realizó
+    una validación formal del contraste utilizando criterios de accesibilidad.
+  </p>
 
-    <h2>Qué funcionó bien</h2>
-    <ul>
-        <li class="done">✅ El problema fue detectado rápidamente.</li>
-        <li class="done">✅ La corrección fue simple y de bajo riesgo.</li>
-        <li class="done">✅ El cambio no impactó otras funcionalidades.</li>
-    </ul>
+  <h2>Fundamentación teórica</h2>
 
-    <h2>Qué podría mejorar</h2>
-    <ul>
-        <li class="pending">⬜ Revisar contraste de colores antes de aprobar cambios visuales.</li>
-        <li class="pending">⬜ Incorporar una validación básica de accesibilidad en las revisiones.</li>
-        <li class="pending">⬜ Utilizar herramientas de contraste durante el diseño.</li>
-    </ul>
+  <h3>Accesibilidad y contraste visual</h3>
+  <p>
+    La accesibilidad busca garantizar que todas las personas puedan percibir, comprender
+    y utilizar una interfaz independientemente de sus capacidades o limitaciones.
+  </p>
 
-    <h2>Acciones correctivas</h2>
-    <ul>
-        <li class="done">✅ Cambiar el color del texto a negro.</li>
-        <li class="done">✅ Verificar la legibilidad del contenido principal.</li>
-        <li class="pending">⬜ Incorporar checklist de accesibilidad en futuras revisiones.</li>
-    </ul>
+  <p>
+    Uno de los aspectos más importantes es el contraste entre texto y fondo. Las
+    Web Content Accessibility Guidelines, conocidas como WCAG, establecen que el contenido
+    textual debe presentar una relación mínima de contraste para asegurar una lectura adecuada.
+  </p>
 
-    <h2>Acciones preventivas</h2>
-    <ul>
-        <li class="pending">⬜ Evaluar contraste de colores antes de realizar merge.</li>
-        <li class="pending">⬜ Revisar criterios WCAG para textos y elementos visuales.</li>
-        <li class="pending">⬜ Incluir validaciones visuales en el proceso de code review.</li>
-    </ul>
+  <p>
+    Cuando el contraste es insuficiente, aumenta el esfuerzo visual, disminuye la velocidad
+    de lectura y se reduce la inclusividad de la solución.
+  </p>
 
-    <h2>Lecciones aprendidas</h2>
-    <ul>
-        <li class="done">✅ Un diseño visualmente atractivo puede no ser legible.</li>
-        <li class="done">✅ El contraste es un aspecto fundamental de la accesibilidad.</li>
-        <li class="done">✅ Cambios pequeños en la interfaz pueden mejorar significativamente la experiencia de usuario.</li>
-    </ul>
+  <h3>Heurísticas de Nielsen</h3>
+  <p>
+    La corrección realizada se relaciona con principios de usabilidad como estética y diseño
+    minimalista, reconocimiento antes que recuerdo y prevención de errores.
+  </p>
 
-    <h2>Cierre</h2>
-    <ul>
-        <li class="done">✅ Corrección implementada y validada.</li>
-        <li class="done">✅ Issue resuelto.</li>
-        <li class="done">✅ Sin impactos funcionales posteriores al cambio.</li>
-    </ul>
+  <p>
+    Una interfaz clara permite que los usuarios identifiquen rápidamente la información
+    relevante sin realizar esfuerzos adicionales.
+  </p>
+
+  <h3>Diseño centrado en el usuario</h3>
+  <p>
+    El Diseño Centrado en el Usuario propone que las decisiones de diseño deben fundamentarse
+    en las necesidades reales de las personas y no únicamente en preferencias estéticas.
+  </p>
+
+  <p>
+    Desde esta perspectiva, la accesibilidad es un atributo esencial de calidad.
+  </p>
+
+  <h2>Acciones realizadas</h2>
+  <ol>
+    <li>Identificación y documentación del incidente mediante un Issue.</li>
+    <li>Análisis del problema y definición de una solución.</li>
+    <li>Modificación del color del texto de amarillo a negro.</li>
+    <li>Verificación visual de la mejora obtenida.</li>
+    <li>Registro de la corrección mediante Pull Request.</li>
+    <li>Publicación de la versión corregida.</li>
+  </ol>
+
+  <h2>Resultado obtenido</h2>
+  <ul>
+    <li>El mensaje principal se volvió claramente legible.</li>
+    <li>Se incrementó significativamente el contraste visual.</li>
+    <li>Se mejoró la accesibilidad de la interfaz.</li>
+    <li>Se redujo el esfuerzo cognitivo necesario para leer el contenido.</li>
+    <li>La solución quedó alineada con buenas prácticas de UX y accesibilidad.</li>
+  </ul>
+
+  <h2>Qué funcionó bien</h2>
+  <ul>
+    <li>La revisión visual permitió detectar el problema tempranamente.</li>
+    <li>El uso de Git facilitó la trazabilidad de la corrección.</li>
+    <li>Issues y Pull Requests permitieron documentar el proceso.</li>
+    <li>La solución tuvo bajo costo y alto impacto positivo.</li>
+  </ul>
+
+  <h2>Oportunidades de mejora</h2>
+  <ul>
+    <li>Validar contraste visual antes de publicar cambios.</li>
+    <li>Incorporar revisiones de accesibilidad dentro del proceso de QA.</li>
+    <li>Utilizar herramientas automáticas de evaluación de contraste.</li>
+    <li>Revisar criterios WCAG durante el diseño de interfaces.</li>
+  </ul>
+
+  <h2>Lecciones aprendidas</h2>
+  <p>
+    Este incidente demostró que una interfaz puede ser técnicamente correcta y, sin embargo,
+    presentar problemas de experiencia de usuario.
+  </p>
+
+  <p>
+    La accesibilidad debe considerarse desde las primeras etapas del diseño y no únicamente
+    durante la validación final.
+  </p>
+
+  <p>
+    También se reafirmó que pequeños ajustes visuales pueden generar mejoras significativas
+    en la percepción, comprensión y usabilidad de un producto digital.
+  </p>
+
+  <h2>Conclusión</h2>
+  <p>
+    La corrección del contraste visual permitió transformar una interfaz funcional en una
+    interfaz más accesible y usable.
+  </p>
+
+  <p>
+    El proceso evidenció la importancia de combinar decisiones de diseño con criterios
+    objetivos de accesibilidad, utilizando herramientas de control de versiones,
+    documentación técnica y análisis retrospectivos para promover la mejora continua
+    del producto.
+  </p>
 
 </body>
 </html>
-```
