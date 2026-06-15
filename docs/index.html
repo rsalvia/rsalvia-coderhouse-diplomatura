@@ -1,87 +1,151 @@
-```md
-# Postmortem - Bajo contraste en mensaje de bienvenida
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postmortem - Bajo contraste en mensaje de bienvenida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
 
-## Información general
+        h1 {
+            color: #222;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
 
-- [x] Título del incidente: Bajo contraste visual en el mensaje de bienvenida
-- [x] Fecha de detección: Durante revisión visual de la página
-- [x] Fecha de resolución: Mismo ciclo de desarrollo
-- [x] Responsable: Equipo de desarrollo frontend
-- [x] Componentes involucrados: index.html / estilos CSS
+        h2 {
+            margin-top: 30px;
+            color: #444;
+        }
 
-## Resumen ejecutivo
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-- [x] Se detectó que el mensaje "Bienvenidos a la diplomatura de UX/UI" utilizaba texto amarillo sobre fondo blanco.
-- [x] La combinación dificultaba la lectura del contenido.
-- [x] Se resolvió modificando el color del texto a negro para aumentar el contraste y mejorar la accesibilidad.
+        li {
+            margin: 8px 0;
+        }
 
-## Impacto
+        .done {
+            color: #198754;
+        }
 
-- [x] Afectaba la legibilidad del contenido principal de la página.
-- [x] Podía generar una mala experiencia de usuario.
-- [x] Presentaba un problema de accesibilidad por bajo contraste.
-- [ ] No afectó funcionalidades ni lógica de negocio.
+        .pending {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
 
-## Línea de tiempo
+    <h1>Postmortem - Bajo contraste en mensaje de bienvenida</h1>
 
-- [x] Se creó la página con texto amarillo sobre fondo blanco.
-- [x] Durante la revisión se identificó el problema de visibilidad.
-- [x] Se registró un issue para documentar la mejora.
-- [x] Se implementó el cambio de color.
-- [x] Se verificó la correcta visualización del texto.
-- [x] Se cerró el issue.
+    <h2>Información general</h2>
+    <ul>
+        <li class="done">✅ Título del incidente: Bajo contraste visual en el mensaje de bienvenida</li>
+        <li class="done">✅ Fecha de detección: Durante revisión visual de la página</li>
+        <li class="done">✅ Fecha de resolución: Mismo ciclo de desarrollo</li>
+        <li class="done">✅ Responsable: Equipo de desarrollo frontend</li>
+        <li class="done">✅ Componentes involucrados: index.html / estilos CSS</li>
+    </ul>
 
-## Detección
+    <h2>Resumen ejecutivo</h2>
+    <ul>
+        <li class="done">✅ Se detectó que el mensaje "Bienvenidos a la diplomatura de UX/UI" utilizaba texto amarillo sobre fondo blanco.</li>
+        <li class="done">✅ La combinación dificultaba la lectura del contenido.</li>
+        <li class="done">✅ Se resolvió modificando el color del texto a negro para aumentar el contraste y mejorar la accesibilidad.</li>
+    </ul>
 
-- [x] Detectado mediante revisión manual de la interfaz.
-- [x] No fue necesario monitoreo automatizado.
-- [x] El problema era visible a simple vista.
+    <h2>Impacto</h2>
+    <ul>
+        <li class="done">✅ Afectaba la legibilidad del contenido principal de la página.</li>
+        <li class="done">✅ Podía generar una mala experiencia de usuario.</li>
+        <li class="done">✅ Presentaba un problema de accesibilidad por bajo contraste.</li>
+        <li class="pending">⬜ No afectó funcionalidades ni lógica de negocio.</li>
+    </ul>
 
-## Causa raíz
+    <h2>Línea de tiempo</h2>
+    <ul>
+        <li class="done">✅ Se creó la página con texto amarillo sobre fondo blanco.</li>
+        <li class="done">✅ Durante la revisión se identificó el problema de visibilidad.</li>
+        <li class="done">✅ Se registró un issue para documentar la mejora.</li>
+        <li class="done">✅ Se implementó el cambio de color.</li>
+        <li class="done">✅ Se verificó la correcta visualización del texto.</li>
+        <li class="done">✅ Se cerró el issue.</li>
+    </ul>
 
-- [x] Selección de una combinación de colores con contraste insuficiente.
-- [x] No se validó previamente la legibilidad del texto sobre el fondo.
-- [x] No se consideraron criterios básicos de accesibilidad durante la implementación inicial.
+    <h2>Detección</h2>
+    <ul>
+        <li class="done">✅ Detectado mediante revisión manual de la interfaz.</li>
+        <li class="done">✅ No fue necesario monitoreo automatizado.</li>
+        <li class="done">✅ El problema era visible a simple vista.</li>
+    </ul>
 
-## Acciones tomadas
+    <h2>Causa raíz</h2>
+    <ul>
+        <li class="done">✅ Selección de una combinación de colores con contraste insuficiente.</li>
+        <li class="done">✅ No se validó previamente la legibilidad del texto sobre el fondo.</li>
+        <li class="done">✅ No se consideraron criterios básicos de accesibilidad durante la implementación inicial.</li>
+    </ul>
 
-- [x] Se modificó el color del texto de amarillo a negro.
-- [x] Se mantuvo el resto del diseño sin cambios.
-- [x] Se verificó la mejora visual después de la corrección.
+    <h2>Acciones tomadas</h2>
+    <ul>
+        <li class="done">✅ Se modificó el color del texto de amarillo a negro.</li>
+        <li class="done">✅ Se mantuvo el resto del diseño sin cambios.</li>
+        <li class="done">✅ Se verificó la mejora visual después de la corrección.</li>
+    </ul>
 
-## Qué funcionó bien
+    <h2>Qué funcionó bien</h2>
+    <ul>
+        <li class="done">✅ El problema fue detectado rápidamente.</li>
+        <li class="done">✅ La corrección fue simple y de bajo riesgo.</li>
+        <li class="done">✅ El cambio no impactó otras funcionalidades.</li>
+    </ul>
 
-- [x] El problema fue detectado rápidamente.
-- [x] La corrección fue simple y de bajo riesgo.
-- [x] El cambio no impactó otras funcionalidades.
+    <h2>Qué podría mejorar</h2>
+    <ul>
+        <li class="pending">⬜ Revisar contraste de colores antes de aprobar cambios visuales.</li>
+        <li class="pending">⬜ Incorporar una validación básica de accesibilidad en las revisiones.</li>
+        <li class="pending">⬜ Utilizar herramientas de contraste durante el diseño.</li>
+    </ul>
 
-## Qué podría mejorar
+    <h2>Acciones correctivas</h2>
+    <ul>
+        <li class="done">✅ Cambiar el color del texto a negro.</li>
+        <li class="done">✅ Verificar la legibilidad del contenido principal.</li>
+        <li class="pending">⬜ Incorporar checklist de accesibilidad en futuras revisiones.</li>
+    </ul>
 
-- [ ] Revisar contraste de colores antes de aprobar cambios visuales.
-- [ ] Incorporar una validación básica de accesibilidad en las revisiones.
-- [ ] Utilizar herramientas de contraste durante el diseño.
+    <h2>Acciones preventivas</h2>
+    <ul>
+        <li class="pending">⬜ Evaluar contraste de colores antes de realizar merge.</li>
+        <li class="pending">⬜ Revisar criterios WCAG para textos y elementos visuales.</li>
+        <li class="pending">⬜ Incluir validaciones visuales en el proceso de code review.</li>
+    </ul>
 
-## Acciones correctivas
+    <h2>Lecciones aprendidas</h2>
+    <ul>
+        <li class="done">✅ Un diseño visualmente atractivo puede no ser legible.</li>
+        <li class="done">✅ El contraste es un aspecto fundamental de la accesibilidad.</li>
+        <li class="done">✅ Cambios pequeños en la interfaz pueden mejorar significativamente la experiencia de usuario.</li>
+    </ul>
 
-- [x] Cambiar el color del texto a negro.
-- [x] Verificar la legibilidad del contenido principal.
-- [ ] Incorporar checklist de accesibilidad en futuras revisiones.
+    <h2>Cierre</h2>
+    <ul>
+        <li class="done">✅ Corrección implementada y validada.</li>
+        <li class="done">✅ Issue resuelto.</li>
+        <li class="done">✅ Sin impactos funcionales posteriores al cambio.</li>
+    </ul>
 
-## Acciones preventivas
-
-- [ ] Evaluar contraste de colores antes de realizar merge.
-- [ ] Revisar criterios WCAG para textos y elementos visuales.
-- [ ] Incluir validaciones visuales en el proceso de code review.
-
-## Lecciones aprendidas
-
-- [x] Un diseño visualmente atractivo puede no ser legible.
-- [x] El contraste es un aspecto fundamental de la accesibilidad.
-- [x] Cambios pequeños en la interfaz pueden mejorar significativamente la experiencia de usuario.
-
-## Cierre
-
-- [x] Corrección implementada y validada.
-- [x] Issue resuelto.
-- [x] Sin impactos funcionales posteriores al cambio.
+</body>
+</html>
 ```
