@@ -1,0 +1,87 @@
+```md
+# Postmortem - Bajo contraste en mensaje de bienvenida
+
+## Información general
+
+- [x] Título del incidente: Bajo contraste visual en el mensaje de bienvenida
+- [x] Fecha de detección: Durante revisión visual de la página
+- [x] Fecha de resolución: Mismo ciclo de desarrollo
+- [x] Responsable: Equipo de desarrollo frontend
+- [x] Componentes involucrados: index.html / estilos CSS
+
+## Resumen ejecutivo
+
+- [x] Se detectó que el mensaje "Bienvenidos a la diplomatura de UX/UI" utilizaba texto amarillo sobre fondo blanco.
+- [x] La combinación dificultaba la lectura del contenido.
+- [x] Se resolvió modificando el color del texto a negro para aumentar el contraste y mejorar la accesibilidad.
+
+## Impacto
+
+- [x] Afectaba la legibilidad del contenido principal de la página.
+- [x] Podía generar una mala experiencia de usuario.
+- [x] Presentaba un problema de accesibilidad por bajo contraste.
+- [ ] No afectó funcionalidades ni lógica de negocio.
+
+## Línea de tiempo
+
+- [x] Se creó la página con texto amarillo sobre fondo blanco.
+- [x] Durante la revisión se identificó el problema de visibilidad.
+- [x] Se registró un issue para documentar la mejora.
+- [x] Se implementó el cambio de color.
+- [x] Se verificó la correcta visualización del texto.
+- [x] Se cerró el issue.
+
+## Detección
+
+- [x] Detectado mediante revisión manual de la interfaz.
+- [x] No fue necesario monitoreo automatizado.
+- [x] El problema era visible a simple vista.
+
+## Causa raíz
+
+- [x] Selección de una combinación de colores con contraste insuficiente.
+- [x] No se validó previamente la legibilidad del texto sobre el fondo.
+- [x] No se consideraron criterios básicos de accesibilidad durante la implementación inicial.
+
+## Acciones tomadas
+
+- [x] Se modificó el color del texto de amarillo a negro.
+- [x] Se mantuvo el resto del diseño sin cambios.
+- [x] Se verificó la mejora visual después de la corrección.
+
+## Qué funcionó bien
+
+- [x] El problema fue detectado rápidamente.
+- [x] La corrección fue simple y de bajo riesgo.
+- [x] El cambio no impactó otras funcionalidades.
+
+## Qué podría mejorar
+
+- [ ] Revisar contraste de colores antes de aprobar cambios visuales.
+- [ ] Incorporar una validación básica de accesibilidad en las revisiones.
+- [ ] Utilizar herramientas de contraste durante el diseño.
+
+## Acciones correctivas
+
+- [x] Cambiar el color del texto a negro.
+- [x] Verificar la legibilidad del contenido principal.
+- [ ] Incorporar checklist de accesibilidad en futuras revisiones.
+
+## Acciones preventivas
+
+- [ ] Evaluar contraste de colores antes de realizar merge.
+- [ ] Revisar criterios WCAG para textos y elementos visuales.
+- [ ] Incluir validaciones visuales en el proceso de code review.
+
+## Lecciones aprendidas
+
+- [x] Un diseño visualmente atractivo puede no ser legible.
+- [x] El contraste es un aspecto fundamental de la accesibilidad.
+- [x] Cambios pequeños en la interfaz pueden mejorar significativamente la experiencia de usuario.
+
+## Cierre
+
+- [x] Corrección implementada y validada.
+- [x] Issue resuelto.
+- [x] Sin impactos funcionales posteriores al cambio.
+```
